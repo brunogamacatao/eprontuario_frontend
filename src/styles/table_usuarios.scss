@@ -1,0 +1,23 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.tabela-usuarios {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-hover;
+  @extend .table-bordered;
+
+  thead {
+    @extend .table-dark;
+  }
+
+  tbody {
+    tr {
+      td {
+        button {
+          @extend .btn-sm;
+          @extend .me-1;
+        }
+      }
+    }
+  }
+}
