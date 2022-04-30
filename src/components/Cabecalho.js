@@ -6,6 +6,8 @@ import SeAutenticado from './seguranca/SeAutenticado';
 import SeNaoAutenticado from './seguranca/SeNaoAutenticado';
 import SeUsuarioTemRole from './seguranca/SeUsuarioTemRole';
 
+import icon from '../imagens/user-icon.png';
+
 export default function Cabecalho() {
   const {sessao} = useContext(AppContext);
 
@@ -32,17 +34,30 @@ export default function Cabecalho() {
                   <Link className="nav-link active" to="/login">Login</Link>
                 </li>
               </SeNaoAutenticado>
-              <SeUsuarioTemRole role="administrador">
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/usuarios">Usuários</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/registro">Novo Usuário</Link>
-                </li>
-              </SeUsuarioTemRole>
+            </ul>
+
+            <ul>
               <SeAutenticado>
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/" onClick={() => sessao.logout()}>Sair</Link>
+                <li className="nav-item dropdown">
+                  <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src={icon} className="avatar" alt="Avatar"/> 
+                    {sessao.usuario.nome} <b className="caret"></b>
+                  </Link>
+                  
+                  <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <SeUsuarioTemRole role="administrador">
+                      <li>
+                        <Link className="nav-link active" to="/usuarios">Usuários</Link>
+                      </li>
+                      <li>
+                        <Link className="nav-link active" to="/registro">Novo Usuário</Link>
+                      </li>
+                      <li><hr className="dropdown-divider"/></li>
+                    </SeUsuarioTemRole>
+                    <li>
+                      <Link className="dropdown-item" to="/" onClick={() => sessao.logout()}>Sair</Link>
+                    </li>
+                  </ul>
                 </li>
               </SeAutenticado>
             </ul>

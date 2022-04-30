@@ -44,6 +44,7 @@ export default function ListarUsuarios() {
     return (usuario) => {
       return (
         <tr key={usuario._id}>
+          <td>{usuario.nome}</td>
           <td>{usuario.email}</td>
           <td>{usuario.role}</td>
           <td>{usuario.bloqueado ? 'Sim' : 'Não'}</td>
@@ -68,6 +69,7 @@ export default function ListarUsuarios() {
         <table className="tabela-usuarios">
           <thead>
             <tr>
+              <th>Nome</th>
               <th>Email</th>
               <th>Role</th>
               <th>Bloqueado</th>

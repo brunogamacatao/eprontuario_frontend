@@ -28,7 +28,7 @@ function Login() {
           onSubmit={async (valores, { setSubmitting }) => {
             try {
               await sessao.login(valores);
-              navigate('/interna', { replace: true });
+              navigate('/', { replace: true });
             } catch (ex) {
               setTextoAlerta('email ou senha inválidos');
               setTipoAlerta('danger');

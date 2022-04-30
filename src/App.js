@@ -9,7 +9,6 @@ import { AppProvider } from "./contexts/AppContext";
 import Principal from "./components/Principal";
 import PaginaNaoEncontrada from './components/PaginaNaoEncontrada';
 import Login from './components/Login';
-import Interna from './components/Interna';
 import Cabecalho from "./components/Cabecalho";
 import Registro from './components/Registro';
 import RotaPrivada from "./components/seguranca/RotaPrivada";
@@ -22,12 +21,15 @@ function App() {
         <Cabecalho/>
         <main className="container flex">
           <Routes>
-            <Route path="/" exact={true} element={<Principal/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/registro" element={<Registro/>}/>
-            <Route path="/interna" element={
+            <Route path="/" exact={true} element={
               <RotaPrivada redirectTo="/login">
-                <Interna/>
+                <Principal/>
+              </RotaPrivada>
+            }/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/registro" element={
+              <RotaPrivada redirectTo="/login">
+                <Registro/>
               </RotaPrivada>
             }/>
             <Route path="/usuarios" element={

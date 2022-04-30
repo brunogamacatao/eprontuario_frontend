@@ -10,6 +10,7 @@ const login = async (formLogin) => {
     throw data.erro;
   } else {
     SegurancaService.setToken(data.token, data.role);
+    SegurancaService.setUsuario(data.usuario);
   }
 };
 
