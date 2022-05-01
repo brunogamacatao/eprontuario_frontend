@@ -39,6 +39,7 @@ function App() {
               <Route path="local/editar/:localId" element={<FormLocal/>}/>
               <Route path="paciente/novo" element={<FormPaciente/>}/>
               <Route path="paciente/listar" element={<ListarPacientes/>}/>
+              <Route path="paciente/editar/:pacienteId" element={<FormPaciente/>}/>
               <Route path="atendimento/novo" element={<FormAtendimento/>}/>
               <Route path="atendimento/listar" element={<ListarAtendimentos/>}/>
             </Route>

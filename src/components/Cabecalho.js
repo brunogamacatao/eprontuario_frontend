@@ -24,11 +24,6 @@ export default function Cabecalho() {
               <li className="nav-item">
                 <Link className="nav-link active" to="/">Home</Link>
               </li>
-              <SeAutenticado>
-                <li className="nav-item">
-                  <Link className="nav-link active" to="/interna">Interna</Link>
-                </li>
-              </SeAutenticado>
               <SeNaoAutenticado>
                 <li className="nav-item">
                   <Link className="nav-link active" to="/login">Login</Link>

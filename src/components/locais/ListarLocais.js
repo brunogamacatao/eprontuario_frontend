@@ -16,7 +16,7 @@ export default function ListarLocais() {
   }, []);
 
   const remove = async (exibirConfirmModal, id) => {
-    exibirConfirmModal('Tem certeza que quer remover esse usuário?', async (opcao) => {
+    exibirConfirmModal('Tem certeza que quer remover esse registro?', async (opcao) => {
       if (opcao === 's') {
         await LocalService.remover(id);
         carregarDados();
@@ -31,9 +31,9 @@ export default function ListarLocais() {
   const renderRegistro = (exibirConfirmModal) => {
     return (registro) => {
       return (
-        <tr key={registro._id}>
-          <td>{registro.nome}</td>
-          <td>
+        <tr key={registro._id} className="d-flex">
+          <td className="col-10">{registro.nome}</td>
+          <td className="col-2">
             <button type="button" onClick={() => editar(registro.slug)} className="btn btn-warning">Editar</button>
             <button type="button" onClick={() => remove(exibirConfirmModal, registro.slug)} className="btn btn-danger">Remover</button>
           </td>
@@ -49,9 +49,9 @@ export default function ListarLocais() {
         <h3 className="text-center">Locais Cadastrados</h3>
         <table className="tabela-usuarios">
           <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Ações</th>
+            <tr className="d-flex">
+              <th className="col-10">Nome</th>
+              <th className="col-2">Ações</th>
             </tr>
           </thead>
           <tbody>
