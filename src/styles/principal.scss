@@ -1,0 +1,13 @@
+#principal {
+  display: flex;
+  height: 80vh;
+  gap: 10px;
+
+  #menu_lateral {
+    width: 200px;
+  }
+
+  #conteudo {
+    width: 100%;
+  }
+}

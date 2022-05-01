@@ -16,6 +16,7 @@
     "react-rxjs-elements": "^0.0.7",
     "react-scripts": "5.0.1",
     "rxjs": "^7.5.5",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },

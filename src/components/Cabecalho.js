@@ -1,5 +1,5 @@
-import React, {useContext} from 'react'
-import { Link } from 'react-router-dom'
+import React, {useContext} from 'react';
+import { Link } from 'react-router-dom';
 import AppContext from '../contexts/AppContext';
 
 import SeAutenticado from './seguranca/SeAutenticado';
@@ -55,7 +55,7 @@ export default function Cabecalho() {
                       <li><hr className="dropdown-divider"/></li>
                     </SeUsuarioTemRole>
                     <li>
-                      <Link className="dropdown-item" to="/" onClick={() => sessao.logout()}>Sair</Link>
+                      <Link className="dropdown-item" to="/login" onClick={() => sessao.logout()}>Sair</Link>
                     </li>
                   </ul>
                 </li>
