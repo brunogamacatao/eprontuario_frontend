@@ -20,6 +20,7 @@ import ListarPacientes from "./components/pacientes/ListarPacientes";
 import FormAtendimento from "./components/atendimentos/FormAtendimento";
 import ListarAtendimentos from "./components/atendimentos/ListarAtendimentos";
 import BoasVindas from "./components/BoasVindas";
+import FormPrescricao from "./components/prescricoes/FormPrescricao";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
               <Route path="paciente/editar/:pacienteId" element={<FormPaciente/>}/>
               <Route path="atendimento/novo" element={<FormAtendimento/>}/>
               <Route path="atendimento/listar" element={<ListarAtendimentos/>}/>
+              <Route path="prescricoes/nova" element={<FormPrescricao/>}/>
             </Route>
             <Route path="/login" element={<Login/>}/>
             <Route path="/registro" element={

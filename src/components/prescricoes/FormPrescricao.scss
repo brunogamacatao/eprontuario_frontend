@@ -1,0 +1,51 @@
+.pdfobject-container { 
+  height: 30rem; 
+  border: 1rem solid rgba(0,0,0,.1); 
+}
+
+.main-page {
+  width: 210mm;
+  margin: 10mm auto;
+  background: white;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+
+.sub-page {
+  padding: 1cm;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html, body {
+    width: 210mm;
+  }
+  
+  .main-page {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+  }
+}
+
+.logo {
+  width: 200px;
+}
+
+.flex {
+  display: flex;
+  column-gap: 10px;
+}
+
+.caixa {
+  border: 1px solid black;
+  padding: 5px;
+}
